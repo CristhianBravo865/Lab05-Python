@@ -22,5 +22,5 @@ matriz2 = [
     [0, 0, 2]
 ]
 
-print(esEscalar(matriz1))  # Verdadero
-print(esEscalar(matriz2))  # Falso
+#print(esEscalar(matriz1))  # Verdadero
+#print(esEscalar(matriz2))  # Falso
