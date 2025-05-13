@@ -50,12 +50,19 @@ class Picture:
 
     def up(self, p):
         """ Devuelve una nueva figura poniendo la figura p debajo de la actual """
-        nueva_imagen = self.img + p.img
+        nueva_imagen = p.img + self.img 
         return Picture(nueva_imagen)
 
     def under(self, p):
         """ Devuelve una nueva figura poniendo la figura p sobre la figura actual """
-        nueva_imagen = p.img + self.img
+        nueva_imagen = []
+
+        for fila_p, fila_self in zip(p.img, self.img):
+            nueva_fila = ""
+            for char_p, char_self in zip(fila_p, fila_self):
+                nueva_fila += char_p if char_p != ' ' else char_self
+            nueva_imagen.append(nueva_fila)
+
         return Picture(nueva_imagen)
 
     def horizontalRepeat(self, n):
