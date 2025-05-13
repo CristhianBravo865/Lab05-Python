@@ -22,14 +22,12 @@ class Picture:
             nueva_imagen.append(nueva_fila)
         return Picture(nueva_imagen)
 
-
     def horizontalMirror(self):
         """ Devuelve el espejo horizontal de la imagen """
         nueva_imagen = []
         for i in range(len(self.img) - 1, -1, -1):
             nueva_imagen.append(self.img[i])
         return Picture(nueva_imagen)
-
 
     def negative(self):
         """ Devuelve un negativo de la imagen """
@@ -50,10 +48,10 @@ class Picture:
             nueva_imagen.append(nueva_fila)
         return Picture(nueva_imagen)
 
-
     def up(self, p):
         """ Devuelve una nueva figura poniendo la figura p debajo de la actual """
-        return Picture(None)
+        nueva_imagen = self.img + p.img
+        return Picture(nueva_imagen)
 
     def under(self, p):
         """ Devuelve una nueva figura poniendo la figura p sobre la
