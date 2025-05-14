@@ -17,8 +17,8 @@ class Picture:
         nueva_imagen = []
         for fila in self.img:
             nueva_fila = ""
-            for caracter in reversed(fila):
-                nueva_fila += caracter
+            for i in range(len(fila) - 1, -1, -1):
+                nueva_fila += fila[i]
             nueva_imagen.append(nueva_fila)
         return Picture(nueva_imagen)
 
